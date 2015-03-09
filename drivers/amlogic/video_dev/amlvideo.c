@@ -623,8 +623,8 @@ static int freerun_dqbuf(struct v4l2_buffer *p) {
         return -EAGAIN;
     }
     p->index = (ppmgrvf->canvas0Addr&0xff) - PPMGR_CANVAS_INDEX;
-    p->timestamp.tv_sec = 0;
-    p->timestamp.tv_usec = ppmgrvf->pts_us64;
+    p->timestamp.tv_sec = ppmgrvf->pts_us64 >> 32;
+    p->timestamp.tv_usec = ppmgrvf->pts_us64 & 0xFFFFFFFF;
     return ret;
 }
 
