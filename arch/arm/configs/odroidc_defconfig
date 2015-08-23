@@ -911,7 +911,7 @@ CONFIG_BQL=y
 # CONFIG_AF_RXRPC is not set
 CONFIG_FIB_RULES=y
 CONFIG_WIRELESS=y
-# CONFIG_CFG80211 is not set
+CONFIG_CFG80211=y
 # CONFIG_LIB80211 is not set
 
 #
@@ -1723,7 +1723,7 @@ CONFIG_USB_NET_ZAURUS=y
 # CONFIG_USB_IPHETH is not set
 # CONFIG_USB_SIERRA_NET is not set
 # CONFIG_USB_VL600 is not set
-# CONFIG_WLAN is not set
+CONFIG_WLAN=y
 
 #
 # Enable WiMAX (Networking options) to see the WiMAX drivers
