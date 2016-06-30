@@ -778,7 +778,8 @@ static int remote_probe(struct platform_device *pdev)
 	input_dev->keybit[BIT_WORD(BTN_MOUSE)] |= BIT_MASK(BTN_SIDE)
 						| BIT_MASK(BTN_EXTRA);
 	for (i = 0; i < KEY_MAX; i++)
-		set_bit(i, input_dev->keybit);
+		if (i != BTN_TOUCH)
+			set_bit(i, input_dev->keybit);
 	input_dev->name = "aml_keypad";
 	input_dev->phys = "keypad/input0";
 	input_dev->dev.parent = &pdev->dev;
